@@ -16,7 +16,7 @@ class App extends React.Component {
         // what is super?  using the Constructor redefines our own props but we still want functions from the Constuctor parent. we call super in order to call the functions that "Component" brings.
 
         // the only time we do assignments
-        this.state = {lat: 0}
+        this.state = {lat: null, errorMessage: ''}
         // the value of null means we dont know the number of the latitude yet, but we will know some time in the future after we get our current position
         window.navigator.geolocation.getCurrentPosition(
             position => {
@@ -24,7 +24,9 @@ class App extends React.Component {
                 this.setState({lat: position.coords.latitude})
                 // we did not this.state.lat = position.coords.latitude.
             },
-            err => console.log(err)
+            err => {
+                this.setState({errorMessage: err.message})
+            }
             );
     }
 
@@ -32,7 +34,8 @@ class App extends React.Component {
         
 
         return <div>
-            Latitude: {this.state.lat}
+            Latitude: {this.state.lat} <br/>
+            Error: {this.state.errorMessage}
             <SeasonDisplay />
         </div>
     }
