@@ -34,6 +34,7 @@ class App extends React.Component {
         console.log('My component was rendered to the screen');
     }
 
+    // any time a component is updated, render will be called before the update
     componentDidUpdate() {
         console.log('My component was just updated');  
     }
