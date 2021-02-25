@@ -22,6 +22,7 @@ class App extends React.Component {
 
     // Alternate initalization of state. This is equivalent using the constructor and initializating the state.
     state = { lat: null, errorMessage: ''}
+    // check out babel.io
 
     componentDidMount() {
         window.navigator.geolocation.getCurrentPosition(
@@ -38,14 +39,14 @@ class App extends React.Component {
         }
 
         if (!this.state.errorMessage && this.state.lat) {
-            return <div>Latitude: {this.state.lat} </div>
+            return <div><SeasonDisplay lat={this.state.lat}/></div>
         }
         
 
         return <div>
            Loading...
             
-            <SeasonDisplay />
+            
         </div>
     }
 }

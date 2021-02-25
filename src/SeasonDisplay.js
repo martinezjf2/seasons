@@ -1,8 +1,8 @@
 import React from "react"
 
-function SeasonDisplay() {
+function SeasonDisplay(props) {
     return (
-        <div>SeasonDisplay</div>
+        <div>{props.lat}</div>
     )
 }
 
