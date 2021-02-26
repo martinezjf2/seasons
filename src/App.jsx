@@ -45,7 +45,7 @@ class App extends React.Component {
         
 
         return <div>
-          < Loading />
+          < Loading message="Please accept location request"/>
             
             
         </div>
