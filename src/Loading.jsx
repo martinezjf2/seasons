@@ -8,10 +8,14 @@ function Loading(props) {
             </div>
             
     )
-
-    Loading.defaultProps = {
-        message: "Loading..."
-    }
 }
+
+        Loading.defaultProps = {
+            message: "Loading..."
+        };
+
+    // defaultProps are used to have a default to a component if the parent does not pass in any props.
+
+
 
 export default Loading;
